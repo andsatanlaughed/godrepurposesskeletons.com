@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brand-gold/35 text-ink;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Layout */
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Pre-launch strip that sits above the sticky header, network-wide. */
+  .build-notice {
+    @apply flex items-center justify-center gap-2.5 bg-ink px-6 py-2.5 text-center text-xs tracking-wide text-bone/80 sm:text-sm;
+  }
+  .build-notice b { @apply font-semibold text-brand-gold-light; }
+  .build-dot {
+    @apply inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-brand-gold-light;
+    animation: build-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes build-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  /* Eyebrow / kicker label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-brand-red;
+  }
+
+  /* Gold rule — carried over from andsatanlaughed.com */
+  .gold-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-brand-gold to-transparent;
+  }
+
+  /* Section heading flanked by gold rules (the flagship's signature) */
+  .rule-heading {
+    @apply mb-12 flex items-center justify-center gap-4;
+  }
+  .rule-heading::before,
+  .rule-heading::after {
+    content: '';
+    @apply h-px flex-1 bg-brand-gold/60;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded px-8 py-4 text-sm font-semibold uppercase tracking-widest transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-brand-red text-white shadow-card hover:bg-brand-red-deep hover:-translate-y-0.5 focus-visible:ring-offset-bone;
+  }
+  .btn-outline {
+    @apply btn border border-ink/25 text-ink hover:border-brand-red hover:text-brand-red focus-visible:ring-offset-bone;
+  }
+  .btn-on-dark {
+    @apply btn border border-brand-gold/60 text-brand-gold-light hover:border-brand-gold hover:bg-brand-gold/10 focus-visible:ring-offset-ink;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-lg border border-brand-gold/40 bg-white/70 p-8 shadow-card;
+  }
+
+  /* The two columns of the turn: what you call it / what God calls it */
+  .verdict {
+    @apply rounded-lg border p-8;
+  }
+  .verdict-lie {
+    @apply verdict border-ink/15 bg-ink/[0.03];
+  }
+  .verdict-truth {
+    @apply verdict border-brand-gold/50 bg-white shadow-card;
+  }
+  .verdict li {
+    @apply flex items-start gap-3 py-2 text-lg;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply relative text-sm font-medium tracking-wide text-ink/80 transition-colors hover:text-brand-red;
+  }
+
+  /* Rich text body */
+  .prose-warm p {
+    @apply text-lg leading-relaxed text-ink-soft;
+  }
+  .prose-warm p + p {
+    @apply mt-5;
+  }
+
+  /* Pull-quote set as broken lines — each line is its own <p>, so it must
+     opt out of the .prose-warm paragraph rhythm above it. */
+  .verse {
+    @apply border-l-2 border-brand-gold pl-5 font-serif text-lg italic leading-snug text-ink/80 sm:text-xl;
+  }
+  .verse p + p {
+    @apply mt-0;
+  }
+
+  /* The staccato lines the flagship uses to build pressure */
+  .beat {
+    @apply text-lg leading-relaxed sm:text-xl;
+  }
+}
