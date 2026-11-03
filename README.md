@@ -49,7 +49,7 @@ classes) or `src/input.css`. **A change that isn't rebuilt won't show up.**
 Same DNA as andsatanlaughed.com — Cormorant Garamond (display serif) and
 Inter (body), red headings between thin gold rules, the ✦ gold fleuron, and
 the `.gold-divider`. This site skips the Caveat script face that danbarton.me
-and gramps.top use; the voice here is solemn, not folksy.
+and gramps.me use; the voice here is solemn, not folksy.
 
 What's its own: a deeper near-black `ink` (`#14110f`) that carries two full
 sections rather than one accent band, and `bone` cream in place of the
@@ -94,7 +94,7 @@ is deliberately typographic — there's no hero photo, and it doesn't need one.
 ### Favicons
 
 Each site in the network gets its own mark so the tabs are tellable apart —
-gramps.top is a cream **G** on brand gold, godrepurposesskeletons.com is a
+gramps.me is a cream **G** on brand gold, godrepurposesskeletons.com is a
 bone **S** on brand red, both set in Cormorant Garamond to match the display
 face. They're generated, not hand-drawn:
 
